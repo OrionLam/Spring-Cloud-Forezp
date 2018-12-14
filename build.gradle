@@ -1,0 +1,38 @@
+allprojects {
+	apply plugin: 'java-library'
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	ext {
+		springBootVersion = '2.1.1.RELEASE'
+	}
+	group = 'me.spring-cloud-forezq'
+    version = '1.00'
+	
+	repositories {
+	    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	    mavenCentral()
+	}
+	
+	tasks.withType(JavaCompile) {
+	    options.encoding = 'UTF-8'
+	}
+	
+	/*
+	 * Java Source Code And Java Doc
+	 */
+	task sourcesJar(type: Jar, dependsOn: classes) {
+		classifier = 'sources'
+		from sourceSets.main.allSource
+	}
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+	    classifier = 'javadoc'
+	    from javadoc.destinationDir
+	}
+	artifacts {
+	    archives sourcesJar
+	    archives javadocJar
+	}
+	 tasks.withType(Javadoc) {
+	    options.encoding = 'UTF-8'
+	}
+}
