@@ -1,3 +1,5 @@
 rootProject.name = 'Spring-Cloud-Forezp'
 
 include 'eureka-server'
+include 'service-hi'
+include 'service-ribbon'

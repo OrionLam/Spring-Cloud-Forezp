@@ -1,4 +1,4 @@
-package me.sc.forezq;
+package me.sc.forezp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

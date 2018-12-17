@@ -4,9 +4,14 @@ allprojects {
 	targetCompatibility = 1.8
 	ext {
 		springBootVersion = '2.1.1.RELEASE'
+		springCloudNetflix = '2.0.2.RELEASE'
 	}
 	group = 'me.spring-cloud-forezq'
     version = '1.00'
+	
+	dependencies {
+		testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.ext.springBootVersion
+	}
 	
 	repositories {
 	    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }

@@ -1,0 +1,27 @@
+/**
+ * Demo project for Spring Boot
+ */
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: rootProject.ext.springBootVersion
+	
+	//Netflix
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: rootProject.ext.springCloudNetflix
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-ribbon', version: rootProject.ext.springCloudNetflix
+	
+}
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.1.RELEASE")
+	}
+}
+
+bootJar {
+    archiveName='service-ribbon.jar'
+}
